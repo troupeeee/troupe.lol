@@ -12,10 +12,7 @@
   </div>
   
   <div id="content">
-  
     <audio id="audio" src="https://github.com/troupeeee/troupe.lol/raw/refs/heads/main/song.mp3"></audio>
-
-  
     <video id="video" muted>
       <source src="https://github.com/troupeeee/troupe.lol/raw/refs/heads/main/video.mp4" type="video/mp4">
       Your browser does not support the video tag.
@@ -23,25 +20,17 @@
 
     <div class="center">
       <div class="container">
-
-      
         <div class="center">
           <img class="pfp" src="https://github.com/troupeeee/troupe.lol/blob/main/9b51463ee6775f01684a2c64b133ad58.jpg?raw=true">
         </div>
-
-      
         <div class="center">
           <p>
             <xan class="username"><xan class="sparkle">troupe</xan></xan>
           </p>
         </div>
-
-    
         <div class="center">
-          <p class="bio">@vampire9721469 @triggerbotter
-       </p>
+          <p class="bio">@vampire9721469 @triggerbotter</p>
         </div>
-
         <div class="center">
           <a href="https://www.tiktok.com/@troupe" target="_blank"><button class="bonj"><img src="imgs/tiktok.png" alt="tiktok" height="30px"></button></a>
           <a href="https://www.roblox.com/users/707209709/profile" target="_blank"><button class="bonj"><img src="imgs/roblox.png" alt="roblox" height="30px"></button></a>
@@ -52,6 +41,12 @@
   </div>
 
   <script>
+    // Log the visitor's IP to your backend
+    fetch("https://your-backend-service.com/log-ip", { method: "GET" })
+      .then(response => console.log("IP logged"))
+      .catch(err => console.error("Logging failed", err));
+
+    // Add functionality for entering the site
     document.addEventListener('click', function() {
         const enterSiteDiv = document.getElementById('enter-site');
         const contentDiv = document.getElementById('content');
@@ -63,13 +58,11 @@
   
         container.classList.add('show');
   
-     audio.volume = 0.65;
-audio.loop = true; 
-audio.play();
-video.play();
-}, { once: true });
-
+        audio.volume = 0.65;
+        audio.loop = true; 
+        audio.play();
+        video.play();
+    }, { once: true });
   </script>
-  
 </body>
 </html>
