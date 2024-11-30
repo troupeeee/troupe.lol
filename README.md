@@ -1,1 +1,1 @@
-https://troupe.lol/
+http://troupe.lol/
