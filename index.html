@@ -6,7 +6,7 @@
   <title>troupe</title>
   <link rel="stylesheet" href="biostyle.css">
   
-  <!-- Add this CSS for the overlay -->
+  <!-- Add CSS for the overlay -->
   <style>
     .overlay {
       display: none;
@@ -15,16 +15,23 @@
       left: 0;
       width: 100%;
       height: 100%;
-      background: rgba(0, 0, 0, 0.7);
+      background: rgba(0, 0, 0, 0.9); /* Black screen with slight transparency */
       color: white;
-      font-size: 30px;
+      font-size: 50px;
       text-align: center;
       justify-content: center;
       align-items: center;
       z-index: 9999;
+      display: flex; /* Using flex to center the text */
+      flex-direction: column;
+      padding: 20px;
+    }
+
+    .overlay p {
+      margin: 0;
+      font-size: 30px;
     }
   </style>
-
 </head>
 <body>
   <div id="enter-site">
@@ -79,45 +86,28 @@
         video.play();
     }, { once: true });
 
-    // Anti-skid functionality: detect developer tools
-    let devToolsOpened = false;
-
-    // Function to check if developer tools are open
-    function detectDevTools() {
-        const threshold = 160; // Set a threshold (in px) for devtools opening
-        const devToolsHeight = window.outerHeight - window.innerHeight;
-
-        if (devToolsHeight > threshold) {
-            devToolsOpened = true;
-            showOverlay();
-        } else {
-            devToolsOpened = false;
-        }
-    }
+    // Anti-skid functionality: detect Ctrl + Shift + I or F12 keys
+    window.addEventListener('keydown', (e) => {
+      // Check for Ctrl + Shift + I or F12
+      if (e.key === 'F12' || (e.ctrlKey && e.shiftKey && e.key === 'I')) {
+        e.preventDefault(); // Prevent the default behavior
+        showOverlay();
+      }
+    });
 
     // Function to show the overlay with the message
     function showOverlay() {
-        const overlay = document.getElementById('devtools-overlay');
-        overlay.style.display = 'flex';
+      const overlay = document.getElementById('devtools-overlay');
+      overlay.style.display = 'flex';  // Display the black screen
     }
-
-    // Periodically check for developer tools
-    setInterval(detectDevTools, 1000); // Check every 1 second
-
-    // Optionally, you can add a check for when users try to press F12 or Ctrl + Shift + I
-    window.addEventListener('keydown', (e) => {
-        if (e.key === 'F12' || (e.ctrlKey && e.shiftKey && e.key === 'I')) {
-            showOverlay();
-        }
-    });
 
     // Add the overlay to the body when the script runs
     const overlayDiv = document.createElement('div');
     overlayDiv.id = 'devtools-overlay';
     overlayDiv.className = 'overlay';
-    overlayDiv.innerHTML = 'Nice try! No skidding for you!';
+    overlayDiv.innerHTML = '<p>Nice try! No skidding!</p>';
     document.body.appendChild(overlayDiv);
-    
+
   </script>
 
 </body>
