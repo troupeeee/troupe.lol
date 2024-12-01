@@ -28,71 +28,46 @@
       }
     }
 
-    /* Styling for the volume control */
-    #volume-control {
-      position: absolute;
-      top: 10px;
-      left: 10px;
-      z-index: 1000;
+    /* Grandfather clock swinging animation */
+    @keyframes swing {
+      0% {
+        transform: rotate(10deg); /* Start by rotating slightly to the left */
+      }
+      50% {
+        transform: rotate(-10deg); /* Swing to the right */
+      }
+      100% {
+        transform: rotate(10deg); /* Return back to the left */
+      }
     }
 
-    /* Black and white styling for the volume control slider */
-    #volume-slider {
-      -webkit-appearance: none;
-      width: 200px;
-      height: 10px;
-      background: #ddd;
-      border-radius: 5px;
-      outline: none;
+    .pfp {
+      animation: swing 2s ease-in-out infinite; /* Apply the swing animation to the profile picture */
+      transform-origin: top center; /* Set the rotation origin to top center (like a pendulum) */
     }
 
-    #volume-slider::-webkit-slider-thumb {
-      -webkit-appearance: none;
-      width: 20px;
-      height: 20px;
-      background: #333;
-      border-radius: 50%;
-      cursor: pointer;
-    }
-
-    #volume-slider::-moz-range-thumb {
-      width: 20px;
-      height: 20px;
-      background: #333;
-      border-radius: 50%;
-      cursor: pointer;
-    }
-
-    #volume-slider:focus {
-      outline: none;
-    }
-
-    /* Make the container background transparent */
+    /* Other styles */
     .container {
-      background-color: transparent; /* Makes the background transparent */
-      border: none; /* Removes any border if it exists */
+      background-color: transparent;
+      border: none;
     }
 
-    /* Change bio color to black */
     .bio {
-      color: black; /* Sets the bio text color to black */
+      color: black;
     }
 
-    /* Change username color to black */
     .username {
-      color: black; /* Sets the username text color to black */
+      color: black;
     }
 
-    /* Change social button links color to black */
     .bonj {
-      color: black; /* Sets the social button text color to black */
-      border: none; /* Removes any border if it exists */
-      background: transparent; /* Makes button background transparent */
+      color: black;
+      border: none;
+      background: transparent;
     }
 
-    /* Optional: Make the social icons black */
     .bonj img {
-      filter: grayscale(100%) contrast(100%) brightness(100%); /* Turns social icons black and white */
+      filter: grayscale(100%) contrast(100%) brightness(100%);
     }
   </style>
 </head>
