@@ -3,17 +3,17 @@ window.addEventListener('keydown', (event) => {
     if (event.ctrlKey && (event.key === 'S' || event.key === 's')) {
         event.preventDefault()
         body[0].innerHTML =
-          'nice try little nigga LOL >.< skiiding ass nigga grahhhhhh dumbyyyyy Detatched was here oh yeahhh    Detatched.lol hahha'
+          'no skidding for you ahhaahhaha'
     }
     if (event.ctrlKey && event.key === 'C') {
         event.preventDefault()
         body[0].innerHTML =
-            'nice try little nigga LOL >.< skiiding ass nigga grahhhhhh dumbyyyyy Detatched was here oh yeahhh    Detatched.lol hahha'
+            'no skidding for you ahhaahhaha'
     }
     if (event.ctrlKey && (event.key === 'E' || event.key === 'e')) {
         event.preventDefault()
         body[0].innerHTML =
-          'nice try little nigga LOL >.< skiiding ass nigga grahhhhhh dumbyyyyy Detatched was here oh yeahhh    Detatched.lol hahha'
+          'no skidding for you ahhaahhaha'
     }
     if (
         event.ctrlKey &&
@@ -21,17 +21,17 @@ window.addEventListener('keydown', (event) => {
     ) {
         event.preventDefault()
         body[0].innerHTML =
-          'nice try little nigga LOL >.< skiiding ass nigga grahhhhhh dumbyyyyy Detatched was here oh yeahhh    Detatched.lol hahha'
+          'no skidding for you ahhaahhaha'
     }
     if (event.ctrlKey && (event.key === 'K' || event.key === 'k')) {
         event.preventDefault()
         body[0].innerHTML =
-          'nice try little nigga LOL >.< skiiding ass nigga grahhhhhh dumbyyyyy Detatched was here oh yeahhh    Detatched.lol hahha'
+          'no skidding for you ahhaahhaha'
     }
     if (event.ctrlKey && (event.key === 'U' || event.key === 'u')) {
         event.preventDefault()
         body[0].innerHTML =
-          'nice try little nigga LOL >.< skiiding ass nigga grahhhhhh dumbyyyyy Detatched was here oh yeahhh    Detatched.lol hahha'
+          'no skidding for you ahhaahhaha'
     }
 })
 document.addEventListener('contextmenu', function (e) {
