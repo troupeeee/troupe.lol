@@ -69,6 +69,56 @@
     .bonj img {
       filter: grayscale(100%) contrast(100%) brightness(100%);
     }
+
+    /* Style for volume control */
+    #volume-control {
+      position: fixed;
+      top: 10px;
+      left: 10px;
+      z-index: 1000;
+      display: none; /* Initially hidden */
+    }
+
+    /* Styling for the volume slider */
+    #volume-slider {
+      -webkit-appearance: none; /* Removes default styling in some browsers */
+      appearance: none;
+      width: 150px;
+      height: 8px;
+      background: #ccc; /* Gray background */
+      border-radius: 5px;
+      outline: none;
+      transition: background 0.3s ease;
+    }
+
+    #volume-slider::-webkit-slider-thumb {
+      -webkit-appearance: none;
+      appearance: none;
+      width: 20px;
+      height: 20px;
+      border-radius: 50%;
+      background: #fff; /* White thumb */
+      border: 2px solid #000; /* Black border */
+      cursor: pointer;
+    }
+
+    #volume-slider::-moz-range-thumb {
+      width: 20px;
+      height: 20px;
+      border-radius: 50%;
+      background: #fff; /* White thumb */
+      border: 2px solid #000; /* Black border */
+      cursor: pointer;
+    }
+
+    #volume-slider::-ms-thumb {
+      width: 20px;
+      height: 20px;
+      border-radius: 50%;
+      background: #fff; /* White thumb */
+      border: 2px solid #000; /* Black border */
+      cursor: pointer;
+    }
   </style>
 </head>
 <body>
@@ -107,7 +157,7 @@
     </div>
   </div>
 
-  <!-- Volume control slider -->
+  <!-- Volume control slider (initially hidden) -->
   <div id="volume-control">
     <input type="range" id="volume-slider" min="0" max="1" step="0.01" value="0.65">
   </div>
@@ -123,6 +173,7 @@
         const container = contentDiv.querySelector('.container');
         const audio = document.getElementById('audio');
         const video = document.getElementById('video');
+        const volumeControl = document.getElementById('volume-control');
   
         enterSiteDiv.style.display = 'none';
   
@@ -132,6 +183,9 @@
         audio.loop = true; 
         audio.play();
         video.play();
+
+        // Show the volume control after clicking to enter the site
+        volumeControl.style.display = 'block';
     }, { once: true });
 
     // Volume control functionality
